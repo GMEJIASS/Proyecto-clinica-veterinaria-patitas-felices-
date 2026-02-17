@@ -18,7 +18,9 @@ public void leerDatos(){
 }
 
 public void mostrarDatos(){
-  JOptionPane.showMessageDialog(null, "nombre: "+ nombre +"\n especialidad: " + especialidad + "\n telefono: " + telefono);
+  JOptionPane.showMessageDialog(null, "nombre: "+ nombre +
+    "\n especialidad: " + especialidad +
+    "\n telefono: " + telefono);
 }
 
 
