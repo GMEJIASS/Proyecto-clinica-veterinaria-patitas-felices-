@@ -5,7 +5,7 @@ private String telefono;
 private String codVeterinario;
 
 // Metodo constructor
-Public veterinario(){
+public veterinario(){
   this.nombre="";
   this.especialidad="";
   this.telefono="";
