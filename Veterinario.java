@@ -13,18 +13,37 @@ public veterinario(){
 }
 
 // Metodos 
-public void leerDatos(){
-  nombre=JOptionPane.showInputDialog(null,"Digite el nombre del medico veterinario: ");
-  especialidad=JOptionPane.showInputDialog(null,"Digite la especialidad del medico veterinario: ");
-  telefono=JOptionPane.showInputDialog(null,"Digite el numero de telefono del medico veterinario: ");
-  codVeterinario=JOptionPane.showInputDialog(null,"Digite el codigo del medico veterinario: ");
-}
+    public String getNombre() {
+        return nombre;
+    }
 
-public void mostrarDatos(){
-  JOptionPane.showMessageDialog(null, "nombre: "+ nombre +
-    "\n especialidad: " + especialidad +
-    "\n telefono: " + telefono +
-    "\n codVeterinario: " + codVeterinario);
-}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCodVeterinario() {
+        return codVeterinario;
+    }
+
+    public void setCodVeterinario(String codVeterinario) {
+        this.codVeterinario = codVeterinario;
+    }
+
 
 
