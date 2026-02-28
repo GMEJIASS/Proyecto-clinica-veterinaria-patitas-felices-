@@ -12,16 +12,18 @@ public class ProyectoVeterinaria {
 
     public static void main(String[] args) {
 
+        // Datos de prueba
         propietarios[contPropietarios++] = new Propietario("Carlos");
         propietarios[contPropietarios++] = new Propietario("Ana");
 
         mascotas[contMascotas++] = new Mascota("Firulais", "Perro", 3, propietarios[0]);
         mascotas[contMascotas++] = new Mascota("Michi", "Gato", 2, propietarios[1]);
 
-        int opcion;
+        int opcion = 0;
 
-        do {
-            opcion = Integer.parseInt(JOptionPane.showInputDialog(
+        while (opcion != 5) {
+
+            String entrada = JOptionPane.showInputDialog(
                     "CLÍNICA VETERINARIA\n\n"
                   + "1. Registro\n"
                   + "2. Ver mascotas registradas\n"
@@ -29,29 +31,37 @@ public class ProyectoVeterinaria {
                   + "4. Registrar servicio realizado\n"
                   + "5. Salir\n\n"
                   + "Seleccione una opción:"
-            ));
+            );
 
-            switch (opcion) {
-                case 1:
-                    JOptionPane.showMessageDialog(null, "Módulo Registro");
-                    break;
-                case 2:
-                    menuVerMascotas();
-                    break;
-                case 3:
-                    JOptionPane.showMessageDialog(null, "Módulo Citas");
-                    break;
-                case 4:
-                    JOptionPane.showMessageDialog(null, "Módulo Servicios");
-                    break;
-                case 5:
-                    JOptionPane.showMessageDialog(null, "Saliendo...");
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Opción inválida");
+            if (entrada == null) {
+                opcion = 5; // Cancelar = salir
+            } else if (entrada.equals("1") || entrada.equals("2") ||
+                       entrada.equals("3") || entrada.equals("4") ||
+                       entrada.equals("5")) {
+
+                opcion = Integer.parseInt(entrada);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Opción inválida");
+                opcion = 0;
             }
 
-        } while (opcion != 5);
+            if (opcion == 1) {
+                JOptionPane.showMessageDialog(null, "Módulo Registro");
+
+            } else if (opcion == 2) {
+                menuVerMascotas();
+
+            } else if (opcion == 3) {
+                JOptionPane.showMessageDialog(null, "Módulo Citas");
+
+            } else if (opcion == 4) {
+                JOptionPane.showMessageDialog(null, "Módulo Servicios");
+
+            } else if (opcion == 5) {
+                JOptionPane.showMessageDialog(null, "Saliendo...");
+            }
+        }
     }
 
     static void menuVerMascotas() {
@@ -61,28 +71,41 @@ public class ProyectoVeterinaria {
             return;
         }
 
-        int opcion;
+        int opcion = 0;
 
-        do {
-            opcion = Integer.parseInt(JOptionPane.showInputDialog(
+        while (opcion != 3) {
+
+            String entrada = JOptionPane.showInputDialog(
                     "VER MASCOTAS\n\n"
                   + "1. Ver todas\n"
                   + "2. Filtrar por propietario\n"
                   + "3. Regresar"
-            ));
+            );
+
+            if (entrada == null) {
+                opcion = 3; // Cancelar = regresar
+            } else if (entrada.equals("1") ||
+                       entrada.equals("2") ||
+                       entrada.equals("3")) {
+
+                opcion = Integer.parseInt(entrada);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Opción inválida");
+                opcion = 0;
+            }
 
             if (opcion == 1) {
                 mostrarMascotas();
+
             } else if (opcion == 2) {
                 filtrarMascotas();
-            } else if (opcion != 3) {
-                JOptionPane.showMessageDialog(null, "Opción inválida");
             }
-
-        } while (opcion != 3);
+        }
     }
 
     static void mostrarMascotas() {
+
         String texto = "";
 
         for (int i = 0; i < contMascotas; i++) {
@@ -96,20 +119,29 @@ public class ProyectoVeterinaria {
     }
 
     static void filtrarMascotas() {
+
         String nombre = JOptionPane.showInputDialog("Nombre del propietario:");
+
+        if (nombre == null || nombre.equals("")) {
+            return;
+        }
+
         String texto = "";
-        boolean hay = false;
+        boolean encontrado = false;
 
         for (int i = 0; i < contMascotas; i++) {
+
             if (mascotas[i].propietario.nombre.equalsIgnoreCase(nombre)) {
+
                 texto += "Mascota: " + mascotas[i].nombre + "\n";
                 texto += "Especie: " + mascotas[i].especie + "\n";
                 texto += "Edad: " + mascotas[i].edad + "\n\n";
-                hay = true;
+
+                encontrado = true;
             }
         }
 
-        if (hay) {
+        if (encontrado) {
             JOptionPane.showMessageDialog(null, texto);
         } else {
             JOptionPane.showMessageDialog(null, "No se encontraron mascotas");
