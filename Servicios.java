@@ -15,12 +15,24 @@ public Servicios(){
 }
 
 //Getter & Setter
-
-    
-
-
-
-
+  public String getNombreServicio() {
+    return nombreServicio;
+  }
+  public void setNombreServicio(String nombreServicio) {
+    this.nombreServicio = nombreServicio;
+  }
+  public double getCosto() {
+    return costo;
+  }
+  public void setCosto(double costo) {
+    this.costo;
+  }
+  public String getDescripcion() {
+    return descripcion;
+  }
+  public void setDescripcion(String descripcion ) {
+    this.descripcion = descripcion;
+}
 
 
 }
