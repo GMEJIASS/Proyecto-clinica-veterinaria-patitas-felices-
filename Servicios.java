@@ -1,3 +1,7 @@
+package veterinaria;
+import javax.swing.JOptionPane;
+
+public class Servicios {
 //Atributos
 private String nombreServicio;
 private double costo;
@@ -10,6 +14,13 @@ public Servicios(){
   this.descripcion="";
 }
 
-//Getter 
+//Getter & Setter
 
     
+
+
+
+
+
+
+}
