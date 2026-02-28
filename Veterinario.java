@@ -1,4 +1,7 @@
-//Atributos
+package veteriaria;
+import javax.swing.JOptionPane;
+
+public class Veterinario {
 private String nombre;
 private String especialidad;
 private String telefono;
@@ -40,6 +43,7 @@ public veterinario(){
     public String getCodVeterinario() {
         return codVeterinario;
     }
+}
 
     public void setCodVeterinario(String codVeterinario) {
         this.codVeterinario = codVeterinario;
