@@ -9,6 +9,11 @@ public class ProyectoVeterinaria {
 
     static int contPropietarios = 0;
     static int contMascotas = 0;
+    static Servicios[] servicios = new Servicios[10];
+    static Cita[] citas = new Cita[10];
+
+    static int contServicios = 0;
+    static int contCitas = 0;
 
     public static void main(String[] args) {
 
