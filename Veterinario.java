@@ -1,5 +1,5 @@
 package veteriaria;
-import javax.swing.JOptionPane;
+
 
 public class Veterinario {
 private String nombre;
