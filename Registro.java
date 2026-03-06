@@ -1,9 +1,40 @@
-package proyectoveterinaria;
-
+package registro;
 import javax.swing.JOptionPane;
-
+package proyectoveterinaria;
+/**
+ *
+ * @author carlosroman
+ */
 public class Registro {
 
+       
+    private String tipoRegistro;
+    private String descripcion;
+
+    
+    public Registro(String tipoRegistro, String descripcion) {
+        this.tipoRegistro = tipoRegistro;
+        this.descripcion = descripcion;
+    }
+
+   
+    public String getTipoRegistro() {
+        return tipoRegistro;
+    }
+
+    public void setTipoRegistro(String tipoRegistro) {
+        this.tipoRegistro = tipoRegistro;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+   
     public static void menuRegistro() {
 
         int opcion = 0;
@@ -39,4 +70,5 @@ public class Registro {
             }
         }
     }
+
 }
