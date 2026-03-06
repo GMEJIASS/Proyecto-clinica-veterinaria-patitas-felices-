@@ -11,7 +11,7 @@ public class Registro {
         while (opcion != 4) {
 
             String entrada = JOptionPane.showInputDialog(
-                    "REGISTRO\n"
+                    "Registro\n"
                   + "1- Registrar un propietario\n"
                   + "2- Registrar una mascota\n"
                   + "3- Registrar un servicio\n"
