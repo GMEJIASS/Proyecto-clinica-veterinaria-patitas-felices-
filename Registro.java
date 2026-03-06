@@ -12,9 +12,9 @@ public class Registro {
 
             String entrada = JOptionPane.showInputDialog(
                     "REGISTRO\n"
-                  + "1- Registrar propietario\n"
-                  + "2- Registrar mascota\n"
-                  + "3- Registrar servicio\n"
+                  + "1- Registrar un propietario\n"
+                  + "2- Registrar una mascota\n"
+                  + "3- Registrar un servicio\n"
                   + "4- Devolverse"
             );
 
