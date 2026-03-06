@@ -15,7 +15,7 @@ public class Registro {
                   + "1- Registrar un propietario\n"
                   + "2- Registrar una mascota\n"
                   + "3- Registrar un servicio\n"
-                  + "4- Devolverse"
+                  + "4- Deolverse"
             );
 
             if (entrada == null) {
