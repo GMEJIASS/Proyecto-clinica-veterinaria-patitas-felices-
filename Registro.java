@@ -1,35 +1,42 @@
-static void menuRegistro() {
+package proyectoveterinaria;
 
-    int opcion = 0;
+import javax.swing.JOptionPane;
 
-    while (opcion != 4) {
+public class Registro {
 
-        String entrada = JOptionPane.showInputDialog(
-                "REGISTRO\n\n"
-              + "1. Registrar propietario\n"
-              + "2. Registrar mascota\n"
-              + "3. Registrar servicio\n"
-              + "4. Regresar"
-        );
+    public static void menuRegistro() {
 
-        if (entrada == null) {
-            opcion = 4;
-        } else if (entrada.equals("1") || entrada.equals("2")
-                || entrada.equals("3") || entrada.equals("4")) {
+        int opcion = 0;
 
-            opcion = Integer.parseInt(entrada);
+        while (opcion != 4) {
 
-        } else {
-            JOptionPane.showMessageDialog(null, "Opción inválida");
-            opcion = 0;
-        }
+            String entrada = JOptionPane.showInputDialog(
+                    "REGISTRO\n"
+                  + "1- Registrar propietario\n"
+                  + "2- Registrar mascota\n"
+                  + "3- Registrar servicio\n"
+                  + "4- Devolverse"
+            );
 
-        if (opcion == 1) {
-            registrarPropietario();
-        } else if (opcion == 2) {
-            registrarMascota();
-        } else if (opcion == 3) {
-            registrarServicio();
+            if (entrada == null) {
+                opcion = 4;
+            } else if (entrada.equals("1") || entrada.equals("2")
+                    || entrada.equals("3") || entrada.equals("4")) {
+
+                opcion = Integer.parseInt(entrada);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Opción inválida");
+                opcion = 0;
+            }
+
+            if (opcion == 1) {
+                ProyectoVeterinaria.registrarPropietario();
+            } else if (opcion == 2) {
+                ProyectoVeterinaria.registrarMascota();
+            } else if (opcion == 3) {
+                ProyectoVeterinaria.registrarServicio();
+            }
         }
     }
 }
