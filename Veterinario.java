@@ -43,11 +43,16 @@ public veterinario(){
     public String getCodVeterinario() {
         return codVeterinario;
     }
-}
 
     public void setCodVeterinario(String codVeterinario) {
         this.codVeterinario = codVeterinario;
     }
+  public String mostrarInformacion(){
+    return "Nombre del doctor: " + nombre +
+            "\nEspecialidad: " + especialidad +
+            "\nCodigo de veterinario:" + codVeterinario +
+            "\nTelefono: " + telefono;
+  }
 
 
 
