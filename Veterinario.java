@@ -53,6 +53,7 @@ public veterinario(){
             "\nCodigo de veterinario:" + codVeterinario +
             "\nTelefono: " + telefono;
   }
+}
 
 
 
