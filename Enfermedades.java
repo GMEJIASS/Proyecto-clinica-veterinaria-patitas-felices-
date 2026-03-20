@@ -36,4 +36,10 @@ public class Enfermedades{
   public void setSignosVitales(double signosVitales){
     this.signosVitales = signosVitales;
   }
+  public String mostrarInformacion(){
+    return "Enfermedad: " + nombre +
+            "\n Descripcion: " + descripcion +
+            "\n Sintomas: " + sintomas +
+            "\n Signos Vitales: " + signosVitales;
+  }
 }
