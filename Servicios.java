@@ -33,6 +33,10 @@ public Servicios(){
   public void setDescripcion(String descripcion ) {
     this.descripcion = descripcion;
 }
-
+public String mostrarInformacion(){
+  return "Nombre del servicio: " + nombreServicio +
+          "\n Descripcion: " + descripcion + 
+          "\n Costo: $ " + costo;
+}
 
 }
