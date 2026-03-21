@@ -1,5 +1,5 @@
 package cita;
-package proyectoveterinaria;
+
 /**
  *
  * @author carlosroman
