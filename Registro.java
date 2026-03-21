@@ -1,40 +1,9 @@
-package registro;
-import javax.swing.JOptionPane;
 package proyectoveterinaria;
-/**
- *
- * @author carlosroman
- */
+
+import javax.swing.JOptionPane;
+
 public class Registro {
 
-       
-    private String tipoRegistro;
-    private String descripcion;
-
-    
-    public Registro(String tipoRegistro, String descripcion) {
-        this.tipoRegistro = tipoRegistro;
-        this.descripcion = descripcion;
-    }
-
-   
-    public String getTipoRegistro() {
-        return tipoRegistro;
-    }
-
-    public void setTipoRegistro(String tipoRegistro) {
-        this.tipoRegistro = tipoRegistro;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-   
     public static void menuRegistro() {
 
         int opcion = 0;
@@ -42,11 +11,11 @@ public class Registro {
         while (opcion != 4) {
 
             String entrada = JOptionPane.showInputDialog(
-                    "Registro\n"
-                  + "1- Registrar un propietario\n"
-                  + "2- Registrar una mascota\n"
-                  + "3- Registrar un servicio\n"
-                  + "4- Deolverse"
+                    "REGISTRO\n\n"
+                  + "1- Registrar veterinario\n"
+                  + "2- Registrar servicio\n"
+                  + "3- Registrar enfermedad\n"
+                  + "4- Volver"
             );
 
             if (entrada == null) {
@@ -62,13 +31,12 @@ public class Registro {
             }
 
             if (opcion == 1) {
-                ProyectoVeterinaria.registrarPropietario();
+                Main.registrarVeterinario();
             } else if (opcion == 2) {
-                ProyectoVeterinaria.registrarMascota();
+                Main.registrarServicio();
             } else if (opcion == 3) {
-                ProyectoVeterinaria.registrarServicio();
+                Main.registrarEnfermedad();
             }
         }
     }
-
 }
