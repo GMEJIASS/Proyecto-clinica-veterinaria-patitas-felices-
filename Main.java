@@ -5,10 +5,13 @@ public class Main {
     static Veterinario[] veterinarios = new Veterinario[10];
     static Servicio[] servicios = new Servicio[10];
     static Enfermedad[] enfermedades = new Enfermedad[10];
+    static Cita[] citas = new Cita[10];
+
 
     static int cantVeterinarios = 0;
     static int cantServicios = 0;
     static int cantEnfermedades = 0;
+    static int cantCitas = 0;
 
     public static void main(String[] args) {
 
@@ -23,7 +26,9 @@ public class Main {
                     + "4. Mostrar servicios\n"
                     + "5. Registrar enfermedad\n"
                     + "6. Mostrar enfermedades\n"
-                    + "7. Salir"
+                    + "7. Registrar cita\n"
+                    + "8. Mostrar citas\n"
+                    + "9. Salir"
             ));
 
             switch (opcion) {
@@ -46,13 +51,19 @@ public class Main {
                     mostrarEnfermedades();
                     break;
                 case 7:
+                    registrarCita();
+                    break;
+                case 8:
+                    mostrarCitas();
+                    break;
+                case 9:
                     JOptionPane.showMessageDialog(null, "Saliendo del sistema");
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opcion incorrecta");
             }
 
-        } while (opcion != 7);
+        } while (opcion != 9);
     }
 
     public static void registrarVeterinario() {
@@ -151,4 +162,60 @@ public class Main {
             JOptionPane.showMessageDialog(null, s);
         }
     }
+
+    public static void registrarCita() {
+
+    if (cantCitas < citas.length && cantServicios > 0) {
+
+        int indexServicio = Integer.parseInt(JOptionPane.showInputDialog(
+                "Seleccione el servicio:\n"));
+
+        for (int i = 0; i < cantServicios; i++) {
+            JOptionPane.showMessageDialog(null, i + " - " + servicios[i].getNombre());
+        }
+
+        if (indexServicio >= 0 && indexServicio < cantServicios) {
+
+            String fecha = JOptionPane.showInputDialog("Digite la fecha:");
+
+            Cita c = new Cita(
+                    null, // no tienes mascota en este sistema
+                    servicios[indexServicio],
+                    fecha,
+                    servicios[indexServicio].getCosto()
+            );
+
+            citas[cantCitas] = c;
+            cantCitas++;
+
+            JOptionPane.showMessageDialog(null, "Cita registrada correctamente");
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Selección inválida");
+        }
+
+    } else {
+        JOptionPane.showMessageDialog(null, "No hay espacio o no hay servicios");
+    }
+}
+
+    public static void mostrarCitas() {
+
+    if (cantCitas == 0) {
+        JOptionPane.showMessageDialog(null, "No hay citas registradas");
+    } else {
+
+        String s = "";
+
+        for (int i = 0; i < cantCitas; i++) {
+
+            s += "Cita #" + (i + 1) + "\n";
+            s += "Servicio: " + citas[i].getServicio().getNombre() + "\n";
+            s += "Fecha: " + citas[i].getFecha() + "\n";
+            s += "Costo: ₡" + citas[i].getCosto() + "\n\n";
+        }
+
+        JOptionPane.showMessageDialog(null, s);
+    }
+}
 }
