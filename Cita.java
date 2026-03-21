@@ -7,7 +7,7 @@ public class Cita {
     private String fecha;
     private double costo;
 
-    // Constructor
+    
     public Cita(Mascota mascota, Servicios servicio, String fecha, double costo) {
         this.mascota = mascota;
         this.servicio = servicio;
@@ -15,7 +15,7 @@ public class Cita {
         this.costo = costo;
     }
 
-    // Getters y Setters
+   
     public Mascota getMascota() {
         return mascota;
     }
