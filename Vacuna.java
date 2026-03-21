@@ -6,14 +6,14 @@ public class Vacuna {
     private String descripcion;
     private double costo;
 
-    // Constructor
+  
     public Vacuna(String nombreVacuna, String descripcion, double costo) {
         this.nombreVacuna = nombreVacuna;
         this.descripcion = descripcion;
         this.costo = costo;
     }
 
-    // Getters y Setters
+  
     public String getNombreVacuna() {
         return nombreVacuna;
     }
