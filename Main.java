@@ -194,7 +194,7 @@ public class Main {
             String fecha = JOptionPane.showInputDialog("Digite la fecha:");
 
             Cita c = new Cita(
-                    null, // no tienes mascota en este sistema
+                    null, 
                     servicios[indexServicio],
                     fecha,
                     servicios[indexServicio].getCosto()
