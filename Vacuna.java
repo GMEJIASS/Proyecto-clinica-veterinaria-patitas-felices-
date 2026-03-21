@@ -1,21 +1,19 @@
-package vacuna;
 package proyectoveterinaria;
-/**
- *
- * @author carlosroman
- */
+
 public class Vacuna {
 
-    String nombreVacuna;
-    String descripcion;
-    double costo;
+    private String nombreVacuna;
+    private String descripcion;
+    private double costo;
 
+    // Constructor
     public Vacuna(String nombreVacuna, String descripcion, double costo) {
         this.nombreVacuna = nombreVacuna;
         this.descripcion = descripcion;
         this.costo = costo;
     }
 
+    // Getters y Setters
     public String getNombreVacuna() {
         return nombreVacuna;
     }
@@ -39,6 +37,5 @@ public class Vacuna {
     public void setCosto(double costo) {
         this.costo = costo;
     }
-    
 }
 
