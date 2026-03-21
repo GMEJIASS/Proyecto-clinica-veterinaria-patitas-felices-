@@ -6,12 +6,14 @@ public class Main {
     static Servicio[] servicios = new Servicio[10];
     static Enfermedad[] enfermedades = new Enfermedad[10];
     static Cita[] citas = new Cita[10];
+    static Vacuna[] vacunas = new Vacuna[10];
 
-
+    
     static int cantVeterinarios = 0;
     static int cantServicios = 0;
     static int cantEnfermedades = 0;
     static int cantCitas = 0;
+    static int cantVacunas = 0;
 
     public static void main(String[] args) {
 
@@ -28,7 +30,10 @@ public class Main {
                     + "6. Mostrar enfermedades\n"
                     + "7. Registrar cita\n"
                     + "8. Mostrar citas\n"
-                    + "9. Salir"
+                    + "9. Registrar vacuna\n"
+                    + "10. Mostrar vacunas\n"
+                    + "11. Salir"
+                   
             ));
 
             switch (opcion) {
@@ -57,13 +62,19 @@ public class Main {
                     mostrarCitas();
                     break;
                 case 9:
+                    registrarVacuna();
+                    break;
+                case 10:
+                    mostrarVacunas();
+                    break;
+                case 11:
                     JOptionPane.showMessageDialog(null, "Saliendo del sistema");
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opcion incorrecta");
             }
 
-        } while (opcion != 9);
+        } while (opcion != 11);
     }
 
     public static void registrarVeterinario() {
@@ -213,6 +224,44 @@ public class Main {
             s += "Servicio: " + citas[i].getServicio().getNombre() + "\n";
             s += "Fecha: " + citas[i].getFecha() + "\n";
             s += "Costo: ₡" + citas[i].getCosto() + "\n\n";
+        }
+
+        JOptionPane.showMessageDialog(null, s);
+    }
+}
+
+    public static void registrarVacuna() {
+
+    if (cantVacunas < vacunas.length) {
+
+        String nombre = JOptionPane.showInputDialog("Digite el nombre de la vacuna:");
+        String descripcion = JOptionPane.showInputDialog("Digite la descripción:");
+        double costo = Double.parseDouble(JOptionPane.showInputDialog("Digite el costo:"));
+
+        Vacuna v = new Vacuna(nombre, descripcion, costo);
+
+        vacunas[cantVacunas] = v;
+        cantVacunas++;
+
+        JOptionPane.showMessageDialog(null, "Vacuna registrada correctamente");
+
+    } else {
+        JOptionPane.showMessageDialog(null, "No hay espacio en el arreglo de vacunas");
+    }
+}
+
+    public static void mostrarVacunas() {
+
+    if (cantVacunas == 0) {
+        JOptionPane.showMessageDialog(null, "No hay vacunas registradas");
+    } else {
+
+        String s = "";
+
+        for (int i = 0; i < cantVacunas; i++) {
+            s += "Nombre: " + vacunas[i].getNombreVacuna() + "\n";
+            s += "Descripción: " + vacunas[i].getDescripcion() + "\n";
+            s += "Costo: ₡" + vacunas[i].getCosto() + "\n\n";
         }
 
         JOptionPane.showMessageDialog(null, s);
