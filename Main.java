@@ -193,12 +193,11 @@ public class Main {
 
             String fecha = JOptionPane.showInputDialog("Digite la fecha:");
 
-            Cita c = new Cita(
-                    null, 
-                    servicios[indexServicio],
-                    fecha,
-                    servicios[indexServicio].getCosto()
-            );
+          Cita c = new Cita(
+    servicios[indexServicio],
+    fecha,
+    servicios[indexServicio].getCosto()
+           );
 
             citas[cantCitas] = c;
             cantCitas++;
