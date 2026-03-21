@@ -22,59 +22,63 @@ public class Main {
         do {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(
                     "MENU PRINCIPAL\n\n"
-                    + "1. Registrar veterinario\n"
-                    + "2. Mostrar veterinarios\n"
-                    + "3. Registrar servicio\n"
-                    + "4. Mostrar servicios\n"
-                    + "5. Registrar enfermedad\n"
-                    + "6. Mostrar enfermedades\n"
-                    + "7. Registrar cita\n"
-                    + "8. Mostrar citas\n"
-                    + "9. Registrar vacuna\n"
-                    + "10. Mostrar vacunas\n"
-                    + "11. Salir"
+                    + "1. Ir a modulo Registro\n"
+                    + "2. Registrar veterinario\n"
+                    + "3. Mostrar veterinarios\n"
+                    + "4. Registrar servicio\n"
+                    + "5. Mostrar servicios\n"
+                    + "6. Registrar enfermedad\n"
+                    + "7. Mostrar enfermedades\n"
+                    + "8. Registrar cita\n"
+                    + "9. Mostrar citas\n"
+                    + "10. Registrar vacuna\n"
+                    + "11. Mostrar vacunas\n"
+                    + "12. Salir"
                    
             ));
 
             switch (opcion) {
-                case 1:
+               case 1:
+                   Registro.menuRegistro();
+                   break;
+                case 2:
                     registrarVeterinario();
                     break;
-                case 2:
+                case 3:
                     mostrarVeterinarios();
                     break;
-                case 3:
+                case 4:
                     registrarServicio();
                     break;
-                case 4:
+                case 5:
                     mostrarServicios();
                     break;
-                case 5:
+                case 6:
                     registrarEnfermedad();
                     break;
-                case 6:
+                case 7:
                     mostrarEnfermedades();
                     break;
-                case 7:
+                case 8:
                     registrarCita();
                     break;
-                case 8:
+                case 9:
                     mostrarCitas();
                     break;
-                case 9:
+                case 10:
                     registrarVacuna();
                     break;
-                case 10:
+                case 11:
                     mostrarVacunas();
                     break;
-                case 11:
+                case 12:
                     JOptionPane.showMessageDialog(null, "Saliendo del sistema");
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opcion incorrecta");
             }
 
-        } while (opcion != 11);
+        } while (opcion != 12);
     }
 
     public static void registrarVeterinario() {
